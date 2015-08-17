@@ -1,0 +1,1 @@
+This is the parent POM for all Maven related projects published by SourcePond.
