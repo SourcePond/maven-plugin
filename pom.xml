@@ -14,12 +14,12 @@
 
 	<parent>
 		<groupId>ch.sourcepond</groupId>
-		<artifactId>parent</artifactId>
+		<artifactId>build</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.sourcepond.maven.plugins</groupId>
-	<artifactId>plugin-parent</artifactId>
+	<artifactId>maven-plugin</artifactId>
 	<packaging>pom</packaging>
 	<name>Plugin Base-POM</name>
 	<inceptionYear>2015</inceptionYear>
@@ -30,6 +30,8 @@
 	<properties>
 		<!-- Plugin versions -->
 		<maven.version>3.3.3</maven.version>
+		<maven-plugin-annotations.version>3.4</maven-plugin-annotations.version>
+		<maven-plugin-plugin.version>3.4</maven-plugin-plugin.version>
 
 		<!-- Dependency versions -->
 		<org.eclipse.sisu.inject.version>0.3.1</org.eclipse.sisu.inject.version>
@@ -85,6 +87,28 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-plugin-plugin</artifactId>
+					<version>${maven-plugin-plugin.version}</version>
+					<configuration>
+						<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+					</configuration>
+					<executions>
+						<execution>
+							<id>mojo-descriptor</id>
+							<goals>
+								<goal>descriptor</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>help-goal</id>
+							<goals>
+								<goal>helpmojo</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 				<plugin>
 					<groupId>org.eclipse.sisu</groupId>
 					<artifactId>sisu-maven-plugin</artifactId>
