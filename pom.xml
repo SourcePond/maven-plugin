@@ -15,7 +15,7 @@
 	<parent>
 		<groupId>ch.sourcepond</groupId>
 		<artifactId>build</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>0.1.0-SNAPSHOT</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.sourcepond.maven.plugins</groupId>
@@ -35,6 +35,7 @@
 
 		<!-- Dependency versions -->
 		<org.eclipse.sisu.inject.version>0.3.1</org.eclipse.sisu.inject.version>
+		<maven-verifier.version>1.6</maven-verifier.version>
 	</properties>
 
 	<dependencyManagement>
@@ -58,6 +59,11 @@
 				<groupId>org.eclipse.sisu</groupId>
 				<artifactId>org.eclipse.sisu.inject</artifactId>
 				<version>${sisu-maven-plugin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.maven.shared</groupId>
+				<artifactId>maven-verifier</artifactId>
+				<version>${maven-verifier.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
@@ -174,6 +180,17 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>**/HelpMojo.*</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
 
