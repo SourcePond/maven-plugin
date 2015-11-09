@@ -19,7 +19,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ch.sourcepond.maven.plugins</groupId>
 	<artifactId>maven-plugin</artifactId>
-	<version>0.2.0</version>
+	<version>0.2.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Maven Plugin Base-POM</name>
 	<inceptionYear>2015</inceptionYear>
@@ -206,7 +206,7 @@
 		<url>${git.url}</url>
 		<connection>${git.protocol.url}</connection>
 		<developerConnection>${git.protocol.url}</developerConnection>
-		<tag>maven-plugin-0.2.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 </project>
 
