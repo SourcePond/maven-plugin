@@ -24,7 +24,7 @@
 	<name>Plugin Base-POM</name>
 	<inceptionYear>2015</inceptionYear>
 	<description>
-		Base project object model for all Maven-related projects published by SourcePond.
+		Base project object model for all Maven-plugin projects published by SourcePond.
 	</description>
 
 	<properties>
