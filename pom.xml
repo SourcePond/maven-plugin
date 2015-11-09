@@ -22,7 +22,7 @@
 	<artifactId>maven-plugin</artifactId>
 	<version>0.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Plugin Base-POM</name>
+	<name>Maven Plugin Base-POM</name>
 	<inceptionYear>2015</inceptionYear>
 	<description>
 		Base project object model for all Maven-plugin projects published by SourcePond.
